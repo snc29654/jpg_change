@@ -10,8 +10,14 @@
       <option value="1">画像1</option>
       <option value="2">画像2</option>
       <option value="3">画像3</option>
-      </select></p>
-      <img id="link0" src="image0.jpg" width=30% height=30%>
+    </select></p>
+    <p><select name="width" id="width">
+      <option value="100">100</option>
+      <option value="200">200</option>
+      <option value="300">300</option>
+      <option value="400">400</option>
+    </select></p>
+      <img id="link0" src="image0.jpg" width=100 height=100>
       <script>
         document.getElementById("action").addEventListener("change", function(){
 
@@ -25,6 +31,18 @@
             if(s_value=="1")target.src = "image1.jpg";
             if(s_value=="2")target.src = "image2.jpg";
             if(s_value=="3")target.src = "image3.jpg";
+
+        }, false);
+        document.getElementById("width").addEventListener("change", function(){
+
+          var age_elem = document.getElementById("width");
+
+          var s_value = age_elem.options[age_elem.selectedIndex].value;
+          console.log(s_value);
+
+          const target = document.getElementById("link0");
+          target.width = s_value;
+          target.height = s_value;
 
       }, false);
 
